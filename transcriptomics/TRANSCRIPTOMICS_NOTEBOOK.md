@@ -105,7 +105,10 @@
 
      "head" begins reading from the start of the file
 
-    -n 4 to quantify reading the first 4 lines of the file
+    -n 4 to quantify reading the first 4 lines of the file so
+    zcat AA_F0_Rep1_2_clean.fq.gz | head -n 4 will read and display the first 4 lines of the F0_Rep1_2_clean.fq.gz file
+
+
 
     zcat...gz | wc -l  where the data in the  unzipped file is analyzed  by the "word count" command which is modified as wc -l where -l implies quantifying the number of lines. Output represents 4x number of reads as each read contains 4 lines
     ```
