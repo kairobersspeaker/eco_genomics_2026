@@ -64,7 +64,7 @@
 
 -   Use commands ll and ls to list the detailed and simplified contents of a directory
 
--   use command "zcat ..." (where ... is a .gz) file to unzip and \| to send output to command "head -n 4" to read the first 4 lines of file contents
+-   use command "zcat ..." (where ... is a .gz) file to read and \| to send output to command "head -n 4" to read the first 4 lines of file contents
 
 -   **Working Directory**
 
@@ -114,3 +114,118 @@
     ```
 
 ------------------------------------------------------------------------
+
+# Transcriptomics Notebook
+
+**Course:** Into to Ecological Genomics Fall 2026
+
+**Name:** Kai Roberts-Speaker
+
+------------------------------------------------------------------------
+
+## 9/22/2026 Setting up Rstudio Work Environment
+
+-   update .gitignore to exclude transcriptomics/mydata
+
+-   move data from Vacc class Transcriptomics folder to personal transcriptomics folder
+
+-   Create R script to perform intial manipulations and analyses of data
+
+-   **Working Directory**
+
+    `/gpfs1/cl/biol3990/Transcriptomics/CountsMatrix`
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics`
+
+    **Input Files**
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/salmon.isoform.counts.matrix.filteredAssembly`
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/ahud_samples_R.txt`
+
+    **Programs and Dependenceis**
+
+-   `VACC Linux Server`
+
+-   `Bash`
+
+-   `R Studio`
+
+-   `DEseq`
+
+    **Scripts**
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/myscripts/ahud_DEseq_inclass.R`
+
+    **Code**
+
+-   `cp * ~/projects/eco_genomics_2026/transcriptomics/mydata`
+
+    #cp (copy) \* (wildcard=anything in directory) \~/projects/eco_genomics_2026/transcriptomics/mydata (gives path to where you want to copy file
+
+-   in \~/Projects/eco_genomics_2026/.gitignore add `./transcriptomics/mydata` to exclude datafiles from being pushed to github, then stage,commit,and push that function `git add .gitignore git commit -m "Ignore results directory" git push`
+
+\`\``## to verify this, add a .txt file in mydata using bash command`touch ./mydata/test.txt`, before checking in terminal`git status\`. If this file dosent shows up in command output, inclusion to .gitignore worked
+
+![](images/IMG_1152.jpg){width="364"}
+
+this image was imported using `￼ scp /Users/kairoberts-speaker/Desktop/IMG_1152.jpg kirobert@login.vacc.uvm.edu:/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/images` which was run on laptop terminal
+
+------------------------------------------------------------------------
+
+# Transcriptomics Notebook
+
+**Course:** Into to Ecological Genomics Fall 2026
+
+**Name:** Kai Roberts-Speaker
+
+------------------------------------------------------------------------
+
+## 9/24/2026 Basic R tutorial
+
+-   Define Objects
+
+-   simple statistics
+
+-   get readouts of data contents and data type
+
+-   **Working Directory**
+
+    `/~/Projects/eco_genomics_2026_transcriptomics`
+
+    **Input Files**
+
+    `None`
+
+    **Output Files**
+
+    `none`
+
+    **Programs and Dependenceis**
+
+-   `R Studio`
+
+    **Scripts**
+
+-   `~/Projects/eco_genomics_2026/transcriptomics/practice_r_transcriptomics.R`
+
+    **Code**
+
+    ```         
+    x <- 5 define x as 5
+    students <- data.frame(
+      name = c("A","B","C"),
+      height = c(62,68,72)
+    )    use function data.frame to define a matrix of variables, and call it students. Parenthasize each component part. Use quotation marks around non numeric values. 
+    head(students)  Readout of "students " from top
+    class(students) reports the data type of students, i.e. data.frame
+    str(students) resports the value types; numerical or character 
+
+    students$name[2] reports value from collumn 2 of names set
+
+    mean(students$height) performs mean calculation of student height 
+    ```
+
+------------------------------------------------------------------------
+
+# 
