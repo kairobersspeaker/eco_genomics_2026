@@ -229,3 +229,93 @@ this image was imported using `￼ scp /Users/kairoberts-speaker/Desktop/IMG_115
 ------------------------------------------------------------------------
 
 # 
+
+# Transcriptomics Notebook
+
+**Course:** Into to Ecological Genomics Fall 2026
+
+**Name:** Kai Roberts-Speaker
+
+------------------------------------------------------------------------
+
+## 9/29/2026 DEseq day 2
+
+-   Construct
+
+-   Create R script to perform intial manipulations and analyses of data
+
+-   **Working Directory**
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics`
+
+    **Input Files**
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/salmon.isoform.counts.matrix.filteredAssembly`
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/ahud_samples_R.txt`
+
+    **Programs and Dependenceis**
+
+-   `R Studio`
+
+-   `DEseq`
+
+    **Scripts**
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/myscripts/ahud_DEseq_inclass.R`
+
+    **Code**
+
+-   `cp * ~/projects/eco_genomics_2026/transcriptomics/mydata`
+
+    #cp (copy) \* (wildcard=anything in directory) \~/projects/eco_genomics_2026/transcriptomics/mydata (gives path to where you want to copy file
+
+-   in \~/Projects/eco_genomics_2026/.gitignore add `./transcriptomics/mydata` to exclude datafiles from being pushed to github, then stage,commit,and push that function `git add .gitignore git commit -m "Ignore results directory" git push`
+
+\`\``## to verify this, add a .txt file in mydata using bash command`touch ./mydata/test.txt`, before checking in terminal`git status\`. If this file dosent shows up in command output, inclusion to .gitignore worked
+
+# Transcriptomics Notebook
+
+**Course:** Into to Ecological Genomics Fall 2026
+
+**Name:** Kai Roberts-Speaker
+
+------------------------------------------------------------------------
+
+## 8/1/2026 DEseq3
+
+-   Correlate comparative Datasets and define new variable of comparison output with Mutate function
+
+-   Plot these data on scatter plot in ggplot
+
+-   
+
+-   **Working Directory**
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics`
+
+    **Input Files**
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/salmon.isoform.counts.matrix.filteredAssembly`
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/ahud_samples_R.txt`
+
+    **Programs and Dependenceis**
+
+-   `VACC Linux Server`
+
+-   `Bash`
+
+-   `R Studio`
+
+-   `DEseq`
+
+    **Scripts**
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/myscripts/9.29.2026_AHUD_DEseq_inclass2.R`
+
+    **Code**
+
+-   
+
+![](images/lfc OW vs OWA scatter plot.png){width="317"}
