@@ -50,14 +50,6 @@
 
 ------------------------------------------------------------------------
 
-# Transcriptomics Notebook
-
-**Course:** Into to Ecological Genomics Fall 2026
-
-**Name:** Kai Roberts-Speaker
-
-------------------------------------------------------------------------
-
 ## 9/17/2026 Learning to use Commands on the Vacc Linux Server
 
 -   Set path to enter the "cl" directory, before navigating to the "biol3990" and subsequently "Transcriptomics" folders and opening the "CleanData" directory which contains cleaned RNAseq data files in fq.gz form
@@ -115,14 +107,6 @@
 
 ------------------------------------------------------------------------
 
-# Transcriptomics Notebook
-
-**Course:** Into to Ecological Genomics Fall 2026
-
-**Name:** Kai Roberts-Speaker
-
-------------------------------------------------------------------------
-
 ## 9/22/2026 Setting up Rstudio Work Environment
 
 -   update .gitignore to exclude transcriptomics/mydata
@@ -151,7 +135,7 @@
 
 -   `R Studio`
 
--   `DEseq`
+-   `DEseq2`
 
     **Scripts**
 
@@ -170,14 +154,6 @@
 ![](images/IMG_1152.jpg){width="364"}
 
 this image was imported using `￼ scp /Users/kairoberts-speaker/Desktop/IMG_1152.jpg kirobert@login.vacc.uvm.edu:/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/images` which was run on laptop terminal
-
-------------------------------------------------------------------------
-
-# Transcriptomics Notebook
-
-**Course:** Into to Ecological Genomics Fall 2026
-
-**Name:** Kai Roberts-Speaker
 
 ------------------------------------------------------------------------
 
@@ -228,25 +204,15 @@ this image was imported using `￼ scp /Users/kairoberts-speaker/Desktop/IMG_115
 
 ------------------------------------------------------------------------
 
-# 
-
-# Transcriptomics Notebook
-
-**Course:** Into to Ecological Genomics Fall 2026
-
-**Name:** Kai Roberts-Speaker
-
-------------------------------------------------------------------------
-
 ## 9/29/2026 DEseq day 2
 
--   Construct
+-   Analyze F0 data from the counts matrix data
 
--   Create R script to perform intial manipulations and analyses of data
+-   Model differential regulation (up/down) using DEseq2 package commands to generate datapoints, dplyr to wrangle data, and pheatmap/eulerr packages to plot data
 
 -   **Working Directory**
 
-    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics`
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata`
 
     **Input Files**
 
@@ -258,41 +224,33 @@ this image was imported using `￼ scp /Users/kairoberts-speaker/Desktop/IMG_115
 
 -   `R Studio`
 
--   `DEseq`
+-   `DEseq2`
 
     **Scripts**
 
--   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/myscripts/ahud_DEseq_inclass.R`
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/myscripts/``9.29.2026_AHUD_DEseq_inclass2.R`
 
     **Code**
 
--   `cp * ~/projects/eco_genomics_2026/transcriptomics/mydata`
+-   `DESeqDataSetFromMatrix   (to define object from counts matrix/metadata) DESeq(run DE comparison)  plotMA(logfold 2 change mean) counts(display raw count matrix data)  plotCounts(plot counts across genes)mutate(add variabvle) pheatmap(plot heatmaps) euler(generate euler comparison)   plot(draw euler) upset(plot upset)`
 
-    #cp (copy) \* (wildcard=anything in directory) \~/projects/eco_genomics_2026/transcriptomics/mydata (gives path to where you want to copy file
+![](images/Euler Plot.png){width="137"}
 
--   in \~/Projects/eco_genomics_2026/.gitignore add `./transcriptomics/mydata` to exclude datafiles from being pushed to github, then stage,commit,and push that function `git add .gitignore git commit -m "Ignore results directory" git push`
+![](images/Heatmap.png){width="235"}
 
-\`\``## to verify this, add a .txt file in mydata using bash command`touch ./mydata/test.txt`, before checking in terminal`git status\`. If this file dosent shows up in command output, inclusion to .gitignore worked
-
-# Transcriptomics Notebook
-
-**Course:** Into to Ecological Genomics Fall 2026
-
-**Name:** Kai Roberts-Speaker
+![](images/Upset Plot.png){width="242"}
 
 ------------------------------------------------------------------------
 
-## 8/1/2026 DEseq3
+## 8/1/2026 DEseq day 3
 
 -   Correlate comparative Datasets and define new variable of comparison output with Mutate function
 
--   Plot these data on scatter plot in ggplot
-
--   
+-   Plot these data on scatter plot in ggplot package commands
 
 -   **Working Directory**
 
-    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics`
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata`
 
     **Input Files**
 
@@ -304,11 +262,9 @@ this image was imported using `￼ scp /Users/kairoberts-speaker/Desktop/IMG_115
 
 -   `VACC Linux Server`
 
--   `Bash`
-
 -   `R Studio`
 
--   `DEseq`
+-   `DEseq2`
 
     **Scripts**
 
@@ -316,6 +272,6 @@ this image was imported using `￼ scp /Users/kairoberts-speaker/Desktop/IMG_115
 
     **Code**
 
--   
+    `from manual using dplyr functions "filter() to remove rows mutate() to add a new variable case_when() to classify genes into categories arrange() to sort the rows". Also, merge to combine datasets defining perameter and mutate used to add new output value based on merged data to record significance across conditions`. `Defining plotting order by what you want ontop levels = c("x" , "y" , "z")`. `mereg() cor() coord_fixed() to generate comparison and to be able to compare like-to-like data. annotate() adds correlation value to graph`
 
-![](images/lfc OW vs OWA scatter plot.png){width="317"}
+![](images/lfc%20OW%20vs%20OWA%20scatter%20plot.png){width="317"}
