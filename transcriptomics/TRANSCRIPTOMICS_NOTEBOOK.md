@@ -228,21 +228,21 @@ this image was imported using `￼ scp /Users/kairoberts-speaker/Desktop/IMG_115
 
     **Scripts**
 
--   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/myscripts/``9.29.2026_AHUD_DEseq_inclass2.R`
+-   ``` /gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/myscripts/``9.29.2026_AHUD_DEseq_inclass2.R ```
 
     **Code**
 
 -   `DESeqDataSetFromMatrix   (to define object from counts matrix/metadata) DESeq(run DE comparison)  plotMA(logfold 2 change mean) counts(display raw count matrix data)  plotCounts(plot counts across genes)mutate(add variabvle) pheatmap(plot heatmaps) euler(generate euler comparison)   plot(draw euler) upset(plot upset)`
 
-![](images/Euler Plot.png){width="137"}
+![](images/Euler%20Plot.png){width="137"}
 
 ![](images/Heatmap.png){width="235"}
 
-![](images/Upset Plot.png){width="242"}
+![](images/Upset%20Plot.png){width="242"}
 
 ------------------------------------------------------------------------
 
-## 8/1/2026 DEseq day 3
+## 10/1/2026 DEseq day 3
 
 -   Correlate comparative Datasets and define new variable of comparison output with Mutate function
 
@@ -274,4 +274,84 @@ this image was imported using `￼ scp /Users/kairoberts-speaker/Desktop/IMG_115
 
     `from manual using dplyr functions "filter() to remove rows mutate() to add a new variable case_when() to classify genes into categories arrange() to sort the rows". Also, merge to combine datasets defining perameter and mutate used to add new output value based on merged data to record significance across conditions`. `Defining plotting order by what you want ontop levels = c("x" , "y" , "z")`. `mereg() cor() coord_fixed() to generate comparison and to be able to compare like-to-like data. annotate() adds correlation value to graph`
 
-![](images/lfc%20OW%20vs%20OWA%20scatter%20plot.png){width="317"}
+-   ![](images/clipboard-4019403930.png)
+
+## 10/6/2026 GO Enrichment
+
+-   Correlate comparative Datasets and define new variable of comparison output with Mutate function
+
+-   Plot these data on scatter plot in ggplot package commands
+
+-   **Working Directory**
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata`
+
+    **Input Files**
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/salmon.isoform.counts.matrix.filteredAssembly`
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/ahud_samples_R.txt`
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/trinotate_annotation_GOblastx_forTopGO.txt`
+
+    ### Output Files
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/myresults/GO_FO_OWvsAM_BP.csv`
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/myresults/GO_FO_OAvsAM_BP.csv`
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/myresults/GO_FO_OWAvsAM_BP.csv`
+
+-   **Programs and Dependenceis**
+
+-   `VACC Linux Server`
+
+-   `R Studio`
+
+-   `DEseq2`
+
+-   topGO
+
+    **Scripts**
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/myscripts/GOday1_10_6_2026.R`
+
+    **Code**
+
+    `read.csv()to load DESeq2 results strsplit(..., "::") + paste(x[1:2]) shorten transcript IDs to shortID for GO matching write.csv() to generate file to export readMappings() perform gene/GO file table(unlist(geneID2GO)) to count genes per GO term keepTerms <- allGO >= 5 & allGO <= 500 filter genes new("topGOdata", ontology = "BP", ...) to build topGO object runTest(algorithm = "weight01", "fisher") performs enrichment test GenTable(topNodes = 100) to display top enriched terms arrange(weightFisher) + slice(1:10) to select top 10 terms ggplot() + ge`om_point()+ scale_color_viridis_c() → bubble plot (x = −log10 p, size = genes, color = −log10 p)\`
+
+    ## 10/8/2026 WGCNA 
+
+<!-- -->
+
+-   Correlate comparative Datasets and define new variable of comparison output with Mutate function
+
+-   Plot these data on scatter plot in ggplot package commands
+
+-   **Working Directory**
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata`
+
+    **Input Files**
+
+    `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/salmon.isoform.counts.matrix.filteredAssembly`
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/mydata/ahud_trait_data.txt`
+
+    **Programs and Dependenceis**
+
+-   `VACC Linux Server`
+
+-   `R Studio`
+
+-   `DEseq2`
+
+-   WGCNA
+
+    **Scripts**
+
+-   `/gpfs1/home/k/i/kirobert/Projects/eco_genomics_2026/transcriptomics/myscripts/9.29.2026_WGCNA_HW.R`
+
+    **Code**
+
+`pickSoftThreshold(powerVector, "signed") to test candidate soft powers ggplot(SFT.R.sq) + geom_hline(yintercept=0.8)to pick lowest power with R² ≥ 0.8. soft_power <- 6 define selected power value temp_cor <- cor; cor <- WGCNA::cor to save base cor, mask with WGCNA cor blockwiseModules(TOMType="signed", the heart of it to build network, detect modules minModuleSize=30, mergeCutHeight=0.25) chooseTopHubInEachModule(type="signed") will find hub gene per module unique(shortID[colors == "yellow"]) to condense yellow module genes`
