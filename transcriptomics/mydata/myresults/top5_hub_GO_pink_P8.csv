@@ -1,0 +1,34 @@
+"Power","Module","ID","GO.ID","Term","Ontology","kME"
+"P8","pink","TRINITY_DN5073_c0_g1::TRINITY_DN5073_c0_g1_i1",NA,NA,NA,0.931774927577529
+"P8","pink","TRINITY_DN3066_c0_g1::TRINITY_DN3066_c0_g1_i3","GO:0005096","GTPase activator activity","MF",0.92602903213175
+"P8","pink","TRINITY_DN3066_c0_g1::TRINITY_DN3066_c0_g1_i3","GO:0035556","intracellular signal transduction","BP",0.92602903213175
+"P8","pink","TRINITY_DN3066_c0_g1::TRINITY_DN3066_c0_g1_i3","GO:0043547","positive regulation of GTPase activity","BP",0.92602903213175
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0005634","nucleus","CC",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0003682","chromatin binding","MF",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0000987","cis-regulatory region sequence-specific DNA binding","MF",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0003700","DNA-binding transcription factor activity","MF",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0000981","DNA-binding transcription factor activity, RNA polymerase II-specific","MF",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0043565","sequence-specific DNA binding","MF",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0035881","amacrine cell differentiation","BP",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0036302","atrioventricular canal development","BP",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0001947","heart looping","BP",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0003170","heart valve development","BP",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0045944","positive regulation of transcription by RNA polymerase II","BP",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0045893","positive regulation of DNA-templated transcription","BP",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0008016","regulation of heart contraction","BP",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0006355","regulation of DNA-templated transcription","BP",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0010842","retina layer formation","BP",0.920061014641785
+"P8","pink","TRINITY_DN4365_c0_g1::TRINITY_DN4365_c0_g1_i3","GO:0060579","ventral spinal cord interneuron fate commitment","BP",0.920061014641785
+"P8","pink","TRINITY_DN4502_c0_g1::TRINITY_DN4502_c0_g1_i11","GO:0005737","cytoplasm","CC",0.919945660332686
+"P8","pink","TRINITY_DN4502_c0_g1::TRINITY_DN4502_c0_g1_i11","GO:0043596","nuclear replication fork","CC",0.919945660332686
+"P8","pink","TRINITY_DN4502_c0_g1::TRINITY_DN4502_c0_g1_i11","GO:0005654","nucleoplasm","CC",0.919945660332686
+"P8","pink","TRINITY_DN4502_c0_g1::TRINITY_DN4502_c0_g1_i11","GO:0003682","chromatin binding","MF",0.919945660332686
+"P8","pink","TRINITY_DN4502_c0_g1::TRINITY_DN4502_c0_g1_i11","GO:0003677","DNA binding","MF",0.919945660332686
+"P8","pink","TRINITY_DN4502_c0_g1::TRINITY_DN4502_c0_g1_i11","GO:0006281","DNA repair","BP",0.919945660332686
+"P8","pink","TRINITY_DN4502_c0_g1::TRINITY_DN4502_c0_g1_i11","GO:0006261","DNA-templated DNA replication","BP",0.919945660332686
+"P8","pink","TRINITY_DN4502_c0_g1::TRINITY_DN4502_c0_g1_i11","GO:0000278","mitotic cell cycle","BP",0.919945660332686
+"P8","pink","TRINITY_DN397_c36_g1::TRINITY_DN397_c36_g1_i1","GO:0005789","endoplasmic reticulum membrane","CC",0.91857030722451
+"P8","pink","TRINITY_DN397_c36_g1::TRINITY_DN397_c36_g1_i1","GO:0016021",NA,NA,0.91857030722451
+"P8","pink","TRINITY_DN397_c36_g1::TRINITY_DN397_c36_g1_i1","GO:0005886","plasma membrane","CC",0.91857030722451
+"P8","pink","TRINITY_DN397_c36_g1::TRINITY_DN397_c36_g1_i1","GO:1990034","calcium ion export across plasma membrane","BP",0.91857030722451
+"P8","pink","TRINITY_DN397_c36_g1::TRINITY_DN397_c36_g1_i1","GO:0051480","regulation of cytosolic calcium ion concentration","BP",0.91857030722451

@@ -1,0 +1,31 @@
+"Power","Module","ID","GO.ID","Term","Ontology","kME"
+"P8","cyan","TRINITY_DN2872_c0_g1::TRINITY_DN2872_c0_g1_i3",NA,NA,NA,0.947640175991995
+"P8","cyan","TRINITY_DN6793_c1_g1::TRINITY_DN6793_c1_g1_i1","GO:0031012","extracellular matrix","CC",0.918542949411871
+"P8","cyan","TRINITY_DN6793_c1_g1::TRINITY_DN6793_c1_g1_i1","GO:0005615","extracellular space","CC",0.918542949411871
+"P8","cyan","TRINITY_DN6793_c1_g1::TRINITY_DN6793_c1_g1_i1","GO:0050839","cell adhesion molecule binding","MF",0.918542949411871
+"P8","cyan","TRINITY_DN6793_c1_g1::TRINITY_DN6793_c1_g1_i1","GO:0005518","collagen binding","MF",0.918542949411871
+"P8","cyan","TRINITY_DN6793_c1_g1::TRINITY_DN6793_c1_g1_i1","GO:0050840","extracellular matrix binding","MF",0.918542949411871
+"P8","cyan","TRINITY_DN6793_c1_g1::TRINITY_DN6793_c1_g1_i1","GO:0005178","integrin binding","MF",0.918542949411871
+"P8","cyan","TRINITY_DN6793_c1_g1::TRINITY_DN6793_c1_g1_i1","GO:0007155","cell adhesion","BP",0.918542949411871
+"P8","cyan","TRINITY_DN6793_c1_g1::TRINITY_DN6793_c1_g1_i1","GO:0008283","cell population proliferation","BP",0.918542949411871
+"P8","cyan","TRINITY_DN6793_c1_g1::TRINITY_DN6793_c1_g1_i1","GO:0030198","extracellular matrix organization","BP",0.918542949411871
+"P8","cyan","TRINITY_DN5967_c0_g2::TRINITY_DN5967_c0_g2_i3","GO:0005576","extracellular region","CC",0.910543632237727
+"P8","cyan","TRINITY_DN5967_c0_g2::TRINITY_DN5967_c0_g2_i3","GO:0004252","serine-type endopeptidase activity","MF",0.910543632237727
+"P8","cyan","TRINITY_DN5967_c0_g2::TRINITY_DN5967_c0_g2_i10","GO:0005576","extracellular region","CC",0.910543632237727
+"P8","cyan","TRINITY_DN5967_c0_g2::TRINITY_DN5967_c0_g2_i10","GO:0004252","serine-type endopeptidase activity","MF",0.910543632237727
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0031225",NA,NA,0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0031012","extracellular matrix","CC",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0005576","extracellular region","CC",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0005615","extracellular space","CC",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0005886","plasma membrane","CC",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0004222","metalloendopeptidase activity","MF",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0008270","zinc ion binding","MF",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0001525","angiogenesis","BP",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0030154","cell differentiation","BP",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0030574","collagen catabolic process","BP",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0030198","extracellular matrix organization","BP",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0001554","luteolysis","BP",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0001541","ovarian follicle development","BP",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0001542","ovulation from ovarian follicle","BP",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0051591","response to cAMP","BP",0.906895026389871
+"P8","cyan","TRINITY_DN3031_c0_g1::TRINITY_DN3031_c0_g1_i6","GO:0009725","response to hormone","BP",0.906895026389871

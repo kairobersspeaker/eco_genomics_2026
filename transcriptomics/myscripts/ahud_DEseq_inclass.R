@@ -1,5 +1,5 @@
 # Set your working directory
-setwd("~/projects/eco_genomics_2026/transcriptomics")
+setwd("~set/projects/eco_genomics_2026/transcriptomics")
 
 ## Import the libraries that we're likely to need in this session
 
