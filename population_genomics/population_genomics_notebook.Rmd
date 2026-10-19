@@ -1,0 +1,86 @@
+---
+title: "population_genomics"
+output: html_document
+---
+
+# Population Genomics Notebook
+
+**Course:** Into to Ecological Genomics Fall 2026
+
+**Name:** Kai Roberts-Speaker
+
+------------------------------------------------------------------------
+
+## 10/15/2026 - Using BCF tools and working with VCF
+
+-   **Working Directory**
+
+    `/gpfs1/cl/biol3990/PopulationGenomics/VCF`
+
+    **Input Files**
+
+    -   `Lottia_gigantea_pl_flt3.renamed.vcf.gz`
+
+    **Output Files**
+
+    **Programs and Dependenceis**
+
+-   `VACC linux server (bash)`
+
+-   
+
+    **Scripts**
+
+-   `#!/bin/bash`
+
+    `#SBATCH --job-name=vcf_stats`
+
+    `#SBATCH --partition=general`
+
+    `#SBATCH --nodes=1`
+
+    `#SBATCH --cpus-per-task=1`
+
+    `#SBATCH --mem=40G`
+
+    `#SBATCH --time=30:00:00`
+
+    `#SBATCH --output=./logs/%x.%j.out`
+
+    `#SBATCH --error=./logs/%x.%j.err`
+
+    `#SBATCH --mail-type=ALL`
+
+    `#SBATCH --mail-user=NETID@uvm.edu`
+
+    `module load gcc`
+
+    `module load vcftools`
+
+    `##set your path to where the data is, change to your own path!!`
+
+    `INDIR="/users/d/s/dsadler1/scratch/EcolGenom2026/PopulationGenomics26/mydata"`
+
+    `##set your path to where the data will be stored, change to your own path!!`
+
+    `OUTDIR="/users/d/s/dsadler1/scratch/EcolGenom2026/PopulationGenomics26/myresults"`
+
+    `##change to directory where data is`
+
+    `cd $INDIR`
+
+    `##change out directory to where the results will go`
+
+    `vcftools --gzvcf Lottia_gigantea_pl_flt3.renamed.vcf.gz --missing-indv --out $OUTDIR/missing_data`
+
+    `vcftools --gzvcf Lottia_gigantea_pl_flt3.renamed.vcf.gz --depth --out $OUTDIR/depth_data`
+
+    **Code**
+
+    `load <MODULE>, bcftools xxx greb -v`
+
+|     |
+|-----|
+|     |
+
+------------------------------------------------------------------------
