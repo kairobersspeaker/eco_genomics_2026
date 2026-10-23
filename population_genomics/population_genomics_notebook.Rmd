@@ -27,9 +27,7 @@ output: html_document
 
 -   `VACC linux server (bash)`
 
--   
-
-    **Scripts**
+-   **Scripts**
 
 -   `#!/bin/bash`
 
@@ -84,3 +82,96 @@ output: html_document
 |     |
 
 ------------------------------------------------------------------------
+
+## 10/20/2026 - Population Structure
+
+Learn to prune data of connected SNPs (using LD) for amenability with PCA and Admixture axioms. Conduct PCA and Admixture to assess for population structure
+
+-   **Working Directory**
+
+    `/users/k/i/kirobert/eco_genomics_2026/population_genomics/mydata`
+
+    **Input Files**
+
+    -   `Lottia_gigantea_pl_flt3.renamed.vcf.gz`
+
+    **Output Files**
+
+-   Lg_LD_0.2.prune.in,
+
+    Lg_LD_0.2.prune.out
+
+-   Lg_LD_0.2.log
+
+-   
+
+-   **Programs and Dependenceis**
+
+-   `Plink v1.9.0`
+
+-   `r studio`
+
+-   `vacc linux server`
+
+-   patchwork
+
+-   tidyverse
+
+    **Scripts**
+
+    -   `/users/k/i/kirobert/eco_genomics_2026/population_genomics/myscripts/admixture.R`
+
+    **Code**
+
+    Bash: mkdir /path, \$VCF is defining VCF designaition rather than making it text,
+
+-   R:`list.files("pi", pattern = "windowed.pi$", full.names = TRUE)` — Finds all `*.windowed.pi` files in the `pi` folder and returns their full paths. `set_names(str_remove(basename(pi_files), fixed(".windowed.pi")))` Renames each file path to just its site code (e.g., `"BOD"`) by stripping the directory and suffix.`map_dfr(read_tsv, .id = "Population", show_col_types = FALSE)` — Reads every file and stacks them into one data frame, adding a `Population` column from the names.left_join(sites, by = "Population") %\>% mutate(Site = fct_reorder(Population, Latitude)) — Attaches latitude to each row and reorders sites north-to-south for plotting.group_by(Population, Latitude) %\>% summarise(n_windows = n(), mean_pi = mean(PI), ...) — Computes per-site window counts and mean/median nucleotide diversity.
+
+-   ![](images/admixture_K1-5.png)
+
+## 10/22/2026 - Population Diversity
+
+find pi by population, plot that in a geographical map
+
+-   **Working Directory**
+
+    /users/k/i/kirobert/eco_genomics_2026/population_genomics/mydata
+
+    **Input Files**
+
+    -   `Lottia_gigantea_flt3_sub0.01.vcf.gz`
+
+    **Output Files**
+
+-   /users/k/i/kirobert/eco_genomics_2026/population_genomics/myresults/pi
+
+    **Programs and Dependenceis**
+
+-   tidyverse
+
+-   `r studio`
+
+-   `vacc linux server`
+
+-   **Scripts**
+
+    -   /users/k/i/kirobert/eco_genomics_2026/population_genomics/myscripts/pop_diversity.R
+
+    **Code**
+
+    Bash:
+
+    WINDOW=10000 ###we can change this but keep the code teh same to test multiple window sizes
+
+    for KEEP in pops/\*.txt; do POP=\$(basename \$KEEP .txt) \# e.g. pops/BOD.txt -\> BOD echo "== \$POP ==" vcftools --gzvcf \$VCF\
+    --keep \$KEEP\
+    --window-pi $WINDOW \
+            --out pi/$POP determines pi for 10k window frames for length of constructs in our population
+
+    R:
+
+    pi \<- pi_files %\>% \# name each file by its site, e.g. "pi/BOD.windowed.pi" -\> "BOD" set_names(str_remove(basename(pi_files), fixed(".windowed.pi"))) %\>% \# read every file and stack them, putting the names in a new column, Site map_dfr(read_tsv, .id = "Population", show_col_types = FALSE) %\>% left_join(sites, by = "Population") %\>% mutate(Site = fct_reorder(Population, Latitude))
+
+-   defines pi factor and mutates in column accounting for metadata to then be plotted
+
+    ![](myresults/pi/pi_by_site.png)
