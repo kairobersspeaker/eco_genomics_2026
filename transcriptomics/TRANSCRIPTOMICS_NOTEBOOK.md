@@ -320,7 +320,7 @@ this image was imported using `￼ scp /Users/kairoberts-speaker/Desktop/IMG_115
 
     `read.csv()to load DESeq2 results strsplit(..., "::") + paste(x[1:2]) shorten transcript IDs to shortID for GO matching write.csv() to generate file to export readMappings() perform gene/GO file table(unlist(geneID2GO)) to count genes per GO term keepTerms <- allGO >= 5 & allGO <= 500 filter genes new("topGOdata", ontology = "BP", ...) to build topGO object runTest(algorithm = "weight01", "fisher") performs enrichment test GenTable(topNodes = 100) to display top enriched terms arrange(weightFisher) + slice(1:10) to select top 10 terms ggplot() + ge`om_point()+ scale_color_viridis_c() → bubble plot (x = −log10 p, size = genes, color = −log10 p)\`
 
-    ## 10/8/2026 WGCNA 
+    ## 10/8/2026 WGCNA
 
 <!-- -->
 
