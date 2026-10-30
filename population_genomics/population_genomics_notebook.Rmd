@@ -175,3 +175,108 @@ find pi by population, plot that in a geographical map
 -   defines pi factor and mutates in column accounting for metadata to then be plotted
 
     ![](myresults/pi/pi_by_site.png)
+
+## 10/27/2026 - Signature of Selections
+
+Find and visualize heterozygosity, pi and Taj D across populations
+
+-   **Working Directory**
+
+    /users/k/i/kirobert/eco_genomics_2026/population_genomics/mydata
+
+    **Input Files**
+
+    -   /users/k/i/kirobert/eco_genomics_2026/population_genomics/mydata/fst/\*
+    -   /users/k/i/kirobert/eco_genomics_2026/population_genomics/mydata/sample_metadata.csv
+
+    **Output Files**
+
+-   /users/k/i/kirobert/eco_genomics_2026/population_genomics/myresults/pi
+
+-   /users/k/i/kirobert/eco_genomics_2026/population_genomics/myresults/TajD
+
+-   /users/k/i/kirobert/eco_genomics_2026/population_genomics/myresults/het
+
+    **Programs and Dependenceis**
+
+-   tidyverse
+
+-   gcc/vcftools
+
+-   `r studio`
+
+-   `vacc linux server`
+
+-   **Scripts**
+
+    -   /users/k/i/kirobert/eco_genomics_2026/population_genomics/myscripts/sig.of.selection.R
+
+    **Code**
+
+    Bash:
+
+-   vcftools --gzvcf ${VCF} \
+      --weir-fst-pop pops/${POP1}.txt\
+    --weir-fst-pop pops/${POP2}.txt \
+      --out fst/${POP1}*vs*${POP2} \
+      2> fst/${POP1}*vs*\${POP2}.log
+
+-   POPS=( \$(cut -f2 popmap.txt \| sort -u) ) ##f extracts column, 2 extracts second column, sort -u keeps only unique values (i.e., gives you one row per pop) mkdir -p fst/pairwise echo -e "pop1\tpop2\\tmean_fst\tweighted\_fst" \> fst/pairwise_fst_summary.txt #makes empty txt file headed as pop1 etc
+
+    for (( i=0; i\<${#POPS[@]}; i++ )); do ### starts at first row
+      for (( j=i+1; j<${#POPS[\@]}; j++ )); do ###starts at second row p1=${POPS[$i]} ##i allocated to p1 (first pairwise) p2=${POPS[$j]} ##j allocated to p2 (second pairwise) vcftools --gzvcf ${VCF} \
+          --weir-fst-pop pops/${p1}.txt\
+    --weir-fst-pop pops/${p2}.txt \
+          --out fst/pairwise/${p1}*vs*${p2} \
+          2> fst/pairwise/${p1}*vs*${p2}.log ##same vcftools code as above but looped through
+        mean=$(grep "mean Fst" fst/pairwise/${p1}_vs_${p2}.log \| awk '{print $NF}') ##extracts the mean FST through each loop using grep
+        weighted=$(grep "weighted Fst" fst/pairwise/${p1}_vs_${p2}.log \| awk '{print \$NF}') ##also the weighted
+
+-   pairwise then nested loop fst population compairisons: extracts metadata, runs comparison, outputs statsistics
+
+## 10/29/2026 - Selection Scans: Baypass
+
+Visualize baypass results and genotype/environmental relationship
+
+-   **Working Directory**
+
+    /users/k/i/kirobert/eco_genomics_2026/population_genomics/mydata
+
+    **Input Files**
+
+    -   /users/k/i/kirobert/eco_genomics_2026/population_genomics/mydata/baypass
+
+    **Output Files**
+
+    ![](myresults/baypass_bf_scan.png)
+
+    **Programs and Dependenceis**
+
+-   tidyverse
+
+-   `r studio`
+
+-   `vacc linux server`
+
+-   **Scripts**
+
+    -   /users/k/i/kirobert/eco_genomics_2026/population_genomics/myscripts/BayPass.R
+    -   
+
+    ![](myresults/baypass_top_lat_snp.png)
+
+<!-- -->
+
+-   **Code**
+
+covariates \<- readLines("baypass/Lottia.baypass.covariates.txt")
+
+bf \<- read.table("baypass/Lottia_bp_summary_betai_reg.out", header = TRUE, check.names = FALSE) %\>% rename(BF_dB = `BF(dB)`) %\>% mutate(covariate = covariates[COVARIABLE]) %\>% left_join(snps, by = "MRK") %\>% add_genome_pos()
+
+bf %\>% group_by(covariate) %\>% summarise(n_decisive = sum(BF_dB \> 20))
+
+ggplot(bf, aes(x = genome_pos / 1e6, y = BF_dB)) + geom_point(aes(colour = shade), size = 0.6) + geom_point(data = filter(bf, BF_dB \> 20), colour = "red", size = 1) + geom_hline(yintercept = 20, linetype = "dashed") + facet_wrap(\~ covariate, ncol = 1) + scale_colour_manual(values = c("grey35", "grey70"), guide = "none") + labs(x = "Genome pos (Mb)", y = "Bayes factor (dB)") + theme_classic()
+
+ggsave(paste0(OUTDIR,"/baypass_bf_scan.png"), width = 10, height = 6)
+
+makes manhattan plot of an significant genome wide SNP covariate pairs.
